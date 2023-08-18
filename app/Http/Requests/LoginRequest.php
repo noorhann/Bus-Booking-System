@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class CreateTripsRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,10 +26,8 @@ class CreateTripsRequest extends FormRequest
     public function rules()
     {
         return [
-            "trip_date" => 'required',
-            "start_city" => 'required|exists:cities,id',
-            "end_city" => 'required|exists:cities,id',
-            'intermediateCities.*'=> 'exists:intermediate_cities,id',
+            'email' => 'required|email',
+            'password' => 'required|string',
         ];
     }
 

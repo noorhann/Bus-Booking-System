@@ -15,8 +15,11 @@ class CreateIntermediateCitiesTable extends Migration
     {
         Schema::create('intermediate_cities', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('trip_id');
+            $table->foreign('trip_id')->references('id')->on('trips')->onDelete('cascade');
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
+            $table->integer('sequence_number');
             $table->softDeletes();
             $table->timestamps();
         });

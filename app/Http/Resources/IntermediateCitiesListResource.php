@@ -16,6 +16,8 @@ class IntermediateCitiesListResource extends JsonResource
     {
         return [
             'city_id' => $this->city_id,
+            'trip_id' => $this->trip_id,
+            'sequence_number' => $this->sequence_number,
         ]; 
     }
 }

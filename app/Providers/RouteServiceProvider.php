@@ -60,7 +60,7 @@ class RouteServiceProvider extends ServiceProvider
         $webFiles = glob(base_path('routes/Crud/*.php'));
         for ($i = 0; $i < count($webFiles); $i++) {
             Route::prefix('api/')
-            //->middleware(['auth:admin', 'checkPermission', 'locale'])
+            ->middleware('auth')
             ->group($webFiles[$i]);
         }
     }
