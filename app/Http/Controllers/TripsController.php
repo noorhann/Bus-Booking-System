@@ -91,7 +91,6 @@ class TripsController extends BaseController
         try 
         {
             $record = Trip::create($request->all());
-            
             return apiResponse(
                 true,
                 'Created Successfully',

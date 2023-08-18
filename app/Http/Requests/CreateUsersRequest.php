@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\Rule;
 
 class CreateUsersRequest extends FormRequest
 {
@@ -26,7 +27,9 @@ class CreateUsersRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|max:60',
+            'email' =>  ['required', 'regex:/(.+)@(.+)\.(.+)/', 'email', 'string', 'max:100', Rule::unique('users')->whereNull('deleted_at')],
+            'password' => 'required|string|min:6',
         ];
     }
 

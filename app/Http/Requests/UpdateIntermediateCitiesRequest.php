@@ -27,6 +27,8 @@ class UpdateIntermediateCitiesRequest extends FormRequest
     {
         return [
             'city_id' => 'required|exists:cities,id',
+            'trip_id' => 'required|exists:trips,id',
+            'sequence_number' => 'required|integer',        
         ];
     }
 

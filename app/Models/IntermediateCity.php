@@ -12,10 +12,12 @@ class IntermediateCity extends Model
 
     protected $fillable = [
         'city_id',
+        'trip_id',
+        'sequence_number',
     ];
 
     public function trips()
     {
-        return $this->belongsToMany(Trip::class)->withPivot('sequence_number');
+        return $this->belongsTo(Trip::class);
     }
 }

@@ -23,6 +23,6 @@ class Trip extends Model
 
     public function intermediateCities()
     {
-        return $this->belongsToMany(IntermediateCity::class)->withPivot('sequence_number');
+        return $this->hasMany(IntermediateCity::class);
     }
 }
