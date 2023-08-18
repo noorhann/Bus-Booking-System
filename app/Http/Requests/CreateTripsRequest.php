@@ -29,7 +29,6 @@ class CreateTripsRequest extends FormRequest
             "trip_date" => 'required',
             "start_city" => 'required|exists:cities,id',
             "end_city" => 'required|exists:cities,id',
-            "intermediateCities"=>['array' , 'required'],
             'intermediateCities.*'=> 'exists:intermediate_cities,id',
         ];
     }

@@ -6,6 +6,7 @@ use App\Http\Requests\CreateTripsRequest as CreateRequest;
 use App\Http\Requests\UpdateTripsRequest as UpdateRequest;
 use App\Http\Resources\TripsListResource ;
 use App\Http\Resources\TripsSingleResource ;
+use App\Models\IntermediateCity;
 use App\Models\Trip ;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Routing\Controller as BaseController;
@@ -91,6 +92,17 @@ class TripsController extends BaseController
         try 
         {
             $record = Trip::create($request->all());
+            $cityIds = $request->input('intermediateCities', []);
+            $sequance_number = 0 ;
+            foreach ($cityIds as $city)
+            {
+                $intermediateCity = new IntermediateCity();
+                $intermediateCity->city_id = $city ; 
+                $intermediateCity->trip_id = $record->original['data']->id;
+                $intermediateCity->sequence_number = ++$sequance_number;
+                $intermediateCity->save();
+            }
+
             return apiResponse(
                 true,
                 'Created Successfully',
