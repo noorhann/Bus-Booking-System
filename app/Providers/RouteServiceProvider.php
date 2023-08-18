@@ -47,6 +47,22 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
+
+        $this->mapCrudRoutes();
+
+    }
+
+    /**
+     * Call Crud Routes
+     */
+    protected function mapCrudRoutes()
+    {
+        $webFiles = glob(base_path('routes/Crud/*.php'));
+        for ($i = 0; $i < count($webFiles); $i++) {
+            Route::prefix('api/')
+            //->middleware(['auth:admin', 'checkPermission', 'locale'])
+            ->group($webFiles[$i]);
+        }
     }
 
     /**
