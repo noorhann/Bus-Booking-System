@@ -3,7 +3,7 @@
 Welcome to the Bus Booking System! This application provides a fleet-management system for bus booking.
 
 ## Table of Contents
--![ScreenShot for relational database diagram](https://drive.google.com/file/d/1E-socGvH435aFASuMTJ9MczhAcVv7O2b/view?usp=drive_link)
+-![ScreenShot for relational database diagram](https://drive.google.com/file/d/1E-socGvH435aFASuMTJ9MczhAcVv7O2b/view?usp=sharing)
 
 - [Special Configurations](#special-configurations)
 
