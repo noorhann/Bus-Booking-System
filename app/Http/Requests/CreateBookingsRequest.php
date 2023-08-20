@@ -26,9 +26,7 @@ class CreateBookingsRequest extends FormRequest
     public function rules()
     {
         return [
-            "seat_count" => 'required|integer',
             "seat_id" => 'required|exists:seats,id',
-            "user_id" => 'required|exists:users,id',
             "start_city" => 'required|exists:cities,id',
             "end_city" => 'required|exists:cities,id',
         ]; 

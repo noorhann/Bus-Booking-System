@@ -15,7 +15,6 @@ class BookingsSingleResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'seat_count' => $this->seat_count,
             'seat_id' => $this->seat_id,
             'user_id' => $this->user_id,
             'start_city' => $this->start_city,
