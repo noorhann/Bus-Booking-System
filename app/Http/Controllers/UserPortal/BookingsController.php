@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\UserPortal;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AvailableSeatRequest;
 use App\Http\Requests\CreateBookingsRequest;
 use App\Services\BookingService;
 use Illuminate\Http\Request;
@@ -16,8 +17,9 @@ class BookingsController extends Controller
     }
 
     // list of available seats to be booked for user trip
-    public function availableSeats(Request $request)
+    public function availableSeats(AvailableSeatRequest $request)
     {
+        
         $booking = new BookingService;
         return $booking->getAvailableSeats($request->trip_id, $request->start_city, $request->end_city);
 

@@ -40,7 +40,7 @@ class BookingService
             'seat_id' => $seatId ,
             'user_id' => $userId ,
             'start_city'=>$startCity,
-            'endCity' => $endCity,
+            'end_city' => $endCity,
         ]);
 
         $this->markSeatAsBooked($seatId);
@@ -123,7 +123,6 @@ class BookingService
                     ->toArray();
         
         $trip = Trip::find($tripId);
-
         array_unshift($cities, $trip->start_city);
         array_push($cities, $trip->end_city);
 

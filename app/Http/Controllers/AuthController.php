@@ -14,7 +14,7 @@ class AuthController extends Controller
     /**
      * @param LoginRequest $request
      * @return  json()
-     * Login Admin using email and password
+     * Login User using email and password
      */
     public function login(LoginRequest $request)
     {
@@ -30,6 +30,8 @@ class AuthController extends Controller
                 );
             }
 
+
+            
             $message = 'You Logged in Successfully';
             $data['user'] = new UsersSingleResource(auth()->user());
             $data['token'] = $token;
