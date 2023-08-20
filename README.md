@@ -20,13 +20,15 @@ Before you run the application, make sure to perform the following special confi
 
    ```sh
    php artisan migrate
-3- **JWT Authentication:**
+3. **JWT Authentication:**
    ```sh
    php artisan jwt:secret
-4- **Seed Database:**
+
+4. **Seed Database:**
    ```sh
    php artisan db:seed
-5- **Run the Application::**
+
+5. **Run the Application::**
    ```sh
    php artisan serve
 
