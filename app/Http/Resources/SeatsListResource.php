@@ -16,7 +16,6 @@ class SeatsListResource extends JsonResource
     {
         return [
             'seat_number' => $this->seat_number,
-            'is_booked' => $this->is_booked,
             'bus_id' => $this->bus_id,
         ];
     }
