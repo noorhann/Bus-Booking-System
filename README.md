@@ -40,6 +40,6 @@ Before you run the application, make sure to perform the following special confi
   6. **To generate token use:**
         ```sh
       email: user1@example.com
-      password: 12345678**
+      password: 12345678
 
 
