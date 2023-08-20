@@ -24,12 +24,22 @@ Before you run the application, make sure to perform the following special confi
    ```sh
    php artisan jwt:secret
 
+   to generate token use :
+   email: user1@example.com
+   password: 12345678
+
 4. **Seed Database:**
    ```sh
    php artisan db:seed
 
-5. **Run the Application::**
+5. **Run the Application:**
    ```sh
    php artisan serve
+
+
+  6. **To generate token use:**
+        ```sh
+      email: user1@example.com
+      password: 12345678**
 
 
